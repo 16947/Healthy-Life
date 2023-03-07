@@ -1,7 +1,3 @@
-pip install matplotlib
-pip install streamlit_echarts
-pip install seaborn
-
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -71,15 +67,3 @@ st.pyplot(fig)
 # from streamlit.script_run_context import get_script_run_ctx as get_report_ctx
 #from streamlit.scriptrunner import get_script_run_ctx as get_report_ctx
 
-import graphviz
-import pydeck as pdk
-import altair as alt
-import plotly.figure_factory as ff
-import matplotlib.pyplot as plt
-from pyecharts.charts import *
-from pyecharts.globals import ThemeType
-from pyecharts import options as opts
-from pyecharts.commons.utils import JsCode
-
-from PIL import Image
-from io import BytesIO
