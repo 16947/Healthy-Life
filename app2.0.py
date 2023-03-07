@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import streamlit.components.v1 as components
-from streamlit_echarts import st_echarts
+#from streamlit_echarts import st_echarts
 import matplotlib.pyplot as plt
 import seaborn as sns
 
