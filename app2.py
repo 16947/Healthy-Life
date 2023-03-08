@@ -30,7 +30,7 @@ if st.session_state.first_visit:
   # st.session_state.city_mapping,st.session_state.random_city_index=get_city_mapping()
    # st.session_state.random_city_index=random.choice(range(len(st.session_state.city_mapping)))
    #st.balloons()
-   st.snow()
+   #st.snow()
 
 
 
