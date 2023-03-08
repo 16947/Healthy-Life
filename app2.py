@@ -8,7 +8,7 @@ import seaborn as sns
 
 
 plt.rcParams['axes.unicode_minus']=False
-#sns.set_theme(style="white",font_scale=2.5)
+sns.set_theme(style="white",font_scale=2.5)
 plt.rcParams['font.sans-serif']=['Simhei']
 
 st.set_page_config(page_title="刘欣茹的健康生活总结",page_icon=":rainbow:",layout="wide",initial_sidebar_state="auto")
@@ -35,9 +35,9 @@ y=s.iloc[:,1]
 fig1= plt.figure()
 #st.write(x)
 plt.plot(x,y,linestyle = '-',linewidth = 2,color = 'steelblue',marker = 'o',markersize = 6,markeredgecolor='black',markerfacecolor='steelblue',label='完成情况')
-plt.title('每日情况汇总')
-plt.xlabel('时间')
-plt.ylabel('完成情况')
+plt.title('Daily summary')
+plt.xlabel('time')
+plt.ylabel('achieving results')
 plt.xticks(rotation = 0)#x轴标签倾斜60度
 plt.legend(loc='best',frameon=False)#图例，显示label，去掉边框
 st.pyplot(fig1)
@@ -46,13 +46,18 @@ a=pd.read_csv(r"xiaoxiang.txt", sep='\t')
 labels =a.iloc[:,0]
 sizes = a.iloc[:,1]
 fig = plt.figure()
-plt.pie(sizes,  labels=labels, autopct='%1.1f%%',
+
+patches,l_text,p_text=plt.pie(sizes,  labels=labels, autopct='%1.1f%%',
         shadow=False, startangle=90)#'%1.1f'：指小数点后保留一位有效数值；'%1.2f%%'保留两位小数点，增加百分号（%）;startangle=90则从y轴正方向画起
 plt.axis('equal')#该行代码使饼图长宽相等
 plt.title('完成情况占比', fontdict={'size':15})
 #plt.legend(loc="upper right",fontsize=10,bbox_to_anchor=(1.1,1.05),borderaxespad=0.3)#添加图例
 st.pyplot(fig)
+for t in p_text:
+    t.set_size(5)
 
+for t in l_text:
+    t.set_size(6)
 
 
 
