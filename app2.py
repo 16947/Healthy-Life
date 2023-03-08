@@ -8,7 +8,7 @@ import seaborn as sns
 
 
 plt.rcParams['axes.unicode_minus']=False
-sns.set_theme(style="white",font_scale=2.5)
+#sns.set_theme(style="white",font_scale=2.5)
 plt.rcParams['font.sans-serif']=['Simhei']
 
 st.set_page_config(page_title="刘欣茹的健康生活总结",page_icon=":rainbow:",layout="wide",initial_sidebar_state="auto")
