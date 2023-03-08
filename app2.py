@@ -23,6 +23,11 @@ st.markdown('<br>',unsafe_allow_html=True)
 s=pd.read_csv(r"huizong.txt", sep='\t')
 
 ########################################
+d=st.sidebar.date_input('Date',st.session_state.date_time.date())
+t=st.sidebar.time_input('Time',st.session_state.date_time.time())
+t=f'{t}'.split('.')[0]
+st.sidebar.write(f'The current date time is {d} {t}')
+
 add_selectbox = st.sidebar.selectbox(
     "统计项目",
     ("每日汇总", "大项汇总", "小项汇总")
