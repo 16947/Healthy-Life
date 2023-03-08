@@ -128,7 +128,7 @@ fig1= plt.figure(figsize=(8,6))
 plt.plot(x,y,linestyle = '-',linewidth = 3,color = 'steelblue',marker = 'o',markersize = 10,markeredgecolor='black',markerfacecolor='steelblue')
 #,label='完成情况'
 #plt.title('Daily summary')
-plt.xlabel(f'日期', labelpad=20,fontproperties='simhei',fontsize=30)
+plt.xlabel('日期', labelpad=20,fontproperties='simhei',fontsize=30)
 plt.ylabel('完成情况',rotation =90, labelpad=20,fontproperties='simhei',fontsize=30)        #,linespacing=2
 plt.xticks(rotation = 0,fontproperties = 'Times New Roman', fontsize=15)#x轴标签倾斜60度
 plt.yticks(fontproperties = 'Times New Roman', size =15)
