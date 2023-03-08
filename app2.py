@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib import rcParams
 import time
-
-
+import datetime
+import random
 
 plt.rcParams['axes.unicode_minus']=False
 sns.set_theme(style="white",font_scale=2.5)
@@ -18,6 +18,22 @@ st.set_page_config(page_title="刘欣茹的健康生活总结",page_icon=":rainb
 st.title('Healthy Life:heart:')
 st.markdown('<br>',unsafe_allow_html=True)
 st.markdown('<br>',unsafe_allow_html=True)
+if 'first_visit' not in st.session_state:
+   st.session_state.first_visit=True
+else:
+   st.session_state.first_visit=False
+if st.session_state.first_visit:
+        # 在这里可以定义任意多个全局变量，方便程序进行调用
+   st.session_state.date_time=datetime.datetime.now() + datetime.timedelta(hours=8) # Streamlit Cloud的时区是UTC，加8小时即北京时间
+   #st.session_state.random_chart_index=random.choice(range(len(charts_mapping)))
+   #st.session_state.my_random=MyRandom(random.randint(1,1000000))
+  # st.session_state.city_mapping,st.session_state.random_city_index=get_city_mapping()
+   # st.session_state.random_city_index=random.choice(range(len(st.session_state.city_mapping)))
+   #st.balloons()
+   st.snow()
+
+
+
 #######################################
 
 s=pd.read_csv(r"huizong.txt", sep='\t')
@@ -115,14 +131,11 @@ for percent_complete in range(a):
     time.sleep(0.1)
     bar1.progress(percent_complete + 1, text='汇总统计' )
 
-
-
-
 #st.balloons()
 
-
-
 ################每日汇总###################
+st.title("")
+st.title("")
 st.title("每日汇总")
 
 x=s.iloc[0:-4,0]
@@ -155,8 +168,3 @@ fig = plt.figure()
 
 patches,l_text,p_text=plt.pie(sizes,  labels=labels, autopct='%1.1f%%',labeldistance = 1.1, textprops={'color':'black', 'size':10, 'weight':'bold'},
         shadow=False, startangle=90)#'%1.1f'：指小数点后保留一位有效数值；'%1.2f%%'保留两位小数点，增加百分号（%）;startangle=90则从y轴正方向画起
-
-plt.axis('equal')#该行代码使饼图长宽相等
-#plt.title('完成情况占比', fontdict={'size':15})
-#plt.legend(loc="upper right",fontsize=10,bbox_to_anchor=(1.1,1.05),borderaxespad=0.3)#添加图例
-st.pyplot(fig)
