@@ -1,0 +1,6 @@
+day	tot
+day1	21
+day2	18
+day3	16
+day4	12
+day5	23
