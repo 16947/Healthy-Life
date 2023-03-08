@@ -18,8 +18,11 @@ st.set_page_config(page_title="刘欣茹的健康生活总结",page_icon=":rainb
 st.title('Healthy Life:heart:')
 st.markdown('<br>',unsafe_allow_html=True)
 st.markdown('<br>',unsafe_allow_html=True)
+#######################################
 
+s=pd.read_csv(r"huizong.txt", sep='\t')
 
+########################################
 add_selectbox = st.sidebar.selectbox(
     "统计项目",
     ("每日汇总", "大项汇总", "小项汇总")
@@ -116,7 +119,7 @@ for percent_complete in range(a):
 
 ################每日汇总###################
 st.title("每日汇总")
-s=pd.read_csv(r"huizong.txt", sep='\t')
+
 x=s.iloc[0:-4,0]
 y=s.iloc[0:-4,11]
 #ax1 = plt.subplot(121) 
